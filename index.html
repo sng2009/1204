@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성형 AI와 진정한 친구가 될 수 있을까? - 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body { 
+            font-family: 'Noto Sans KR', 'Inter', sans-serif; /* Noto Sans KR 우선 적용, Inter는 fallback */
+            background-color: #F4F7F9; 
+            color: #263238; 
+        }
+        .chart-container { 
+            position: relative; 
+        }
+        
+        .info-card {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        .section-title {
+            font-size: 2rem; /* text-3xl보다 약간 크게 */
+            font-weight: 700; /* font-bold */
+            color: #2A62B6; /* Primary Blue */
+            margin-bottom: 1.5rem; /* mb-6 */
+            padding-bottom: 0.5rem; /* pb-2 */
+            border-bottom: 2px solid #4ECDC4; /* Secondary Teal */
+            text-align: center;
+        }
+         .subsection-title {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            color: #1e40af; /* Darker Primary Blue for subsection titles */
+            margin-bottom: 1rem; /* mb-4 */
+            text-align: center;
+        }
+        .chart-title { /* Chart.js title plugin styling is separate */
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            text-align: center;
+            margin-bottom: 0.75rem; /* mb-3 */
+            color: #263238;
+        }
+        .caption-text {
+            font-size: 0.875rem; /* text-sm */
+            color: #4A5568; /* text-gray-700 */
+            margin-top: 1rem; /* mt-4 */
+            text-align: center;
+            line-height: 1.6;
+        }
+        .quote-text {
+            font-style: italic;
+            color: #2A62B6;
+            padding: 0.75rem;
+            border-left: 3px solid #4ECDC4;
+            background-color: #E0F2FE;
+            border-radius: 0.25rem;
+            margin: 0.75rem 0;
+        }
+        .icon-svg {
+            width: 2.5rem; /* w-10 */
+            height: 2.5rem; /* h-10 */
+            margin-right: 0.75rem; /* mr-3 */
+            color: #4ECDC4; /* Secondary Teal */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-[#2A62B6] text-white py-8 px-4 text-center rounded-b-xl shadow-xl mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold mb-3">생성형 AI와 진정한 친구가 될 수 있을까?</h1>
+        <p class="text-base md:text-lg text-[#E0F2FE] mb-1">미림 마이스터고 1학년 2반 4조</p>
+        <p class="text-sm text-[#E0F2FE] mb-1">팀원: 이서영, 이창섭, 성낙준, 조은희</p>
+        <p class="text-xs text-[#cce7fd]">작성일: 2025년 5월 26일</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="intro" class="mb-12">
+            <h2 class="section-title">1. 조사 동기 및 목적</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="info-card">
+                    <h3 class="subsection-title">조사 동기</h3>
+                    <p class="text-gray-700 leading-relaxed">최근 생성형 AI의 확산으로 사용자들이 단순 정보 검색을 넘어 AI와 대화하며 정서적 위안을 얻는 경험을 하고 있다. 특히 정서적 교류가 중요한 청소년 시기에 AI가 친구 역할을 어느 정도 수행할 수 있는지에 대한 궁금증에서 본 조사를 시작했다. 미림 마이스터고 1학년 2반 학생들이 생성형 AI를 ‘진정한 친구’로 인식하는지 알아보고자 했다.</p>
+                </div>
+                <div class="info-card">
+                    <h3 class="subsection-title">조사 목적</h3>
+                    <p class="text-gray-700 leading-relaxed">본 조사는 생성형 AI와 인간 간 정서 교류의 실태를 파악하고, 학생들이 AI를 친구로 받아들일 수 있는 가능성과 한계를 탐색하는 데 목적이 있다. 이를 통해 생성형 AI의 감정적 상호작용에 대한 청소년의 인식을 분석하고, 향후 기술 활용의 방향성을 모색하고자 했다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="mb-12 info-card">
+            <h2 class="section-title">2. 조사 계획</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                    <div class="flex items-center justify-center mb-2">
+                        <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <h4 class="text-xl font-semibold text-gray-800">조사 기간</h4>
+                    </div>
+                    <p class="text-gray-600">설문조사: 2025년 5월 14일</p>
+                    <p class="text-gray-600">인터뷰: 2025년 5월 15일</p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center mb-2">
+                        <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.126-1.263-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.126-1.263.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <h4 class="text-xl font-semibold text-gray-800">조사 대상</h4>
+                    </div>
+                    <p class="text-gray-600">미림 마이스터고 1학년 2반 학생들 (총 17명)</p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center mb-2">
+                         <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <h4 class="text-xl font-semibold text-gray-800">조사 방법</h4>
+                    </div>
+                    <p class="text-gray-600">설문조사 (구글 폼 활용)</p>
+                    <p class="text-gray-600">심층 면담 (2명 대상)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="survey-results" class="mb-12">
+            <h2 class="section-title">3. 설문 조사 결과</h2>
+            <p class="text-center text-gray-600 mb-10 -mt-4">미림 마이스터고 1학년 2반 학생 17명 대상</p>
+
+            <div class="info-card">
+                <h3 class="subsection-title">Q1: AI의 이해 및 감정 교감 경험</h3>
+                <div class="chart-container w-full max-w-2xl mx-auto h-80 md:h-96 lg:h-[450px]">
+                    <canvas id="surveyChart1"></canvas>
+                </div>
+                <p class="caption-text">생성형 AI를 사용하면서 'AI가 나를 이해해주는 것 같다'거나 '어느 정도 감정적인 교감이 되는 것 같다'는 느낌을 받은 적이 있는지에 대한 응답이다. AI와 감정 교류를 완전히 부정한 응답은 없었으며, 긍정(41.2%), 중립(29.4%), 부정(29.4%) 응답이 유사하게 분포했다. 이는 AI의 감정적 상호작용에 대한 학생들의 인식이 다양함을 보여준다.</p>
+            </div>
+
+            <div class="info-card">
+                <h3 class="subsection-title">Q2: AI에게 개인적 이야기 공유 가능성</h3>
+                 <div class="chart-container w-full max-w-2xl mx-auto h-80 md:h-96 lg:h-[450px]">
+                    <canvas id="surveyChart2"></canvas>
+                </div>
+                <p class="caption-text">사람 친구에게 이야기하듯이 개인적인 생각이나 비밀을 생성형 AI에게 편하게 이야기할 수 있을지에 대한 응답이다. 긍정적 응답(47%)이 다소 우세했지만, 부정적(35.3%)이거나 중립적(17.6%) 의견도 상당수 존재했다. 이는 AI에 대한 신뢰와 거리감이 공존하며, 개인정보 보호 등에 대한 고려가 필요함을 시사한다.</p>
+            </div>
+
+            <div class="info-card">
+                <h3 class="subsection-title">Q3: 미래 AI와의 '친구' 관계 가능성</h3>
+                <div class="chart-container w-full max-w-2xl mx-auto h-80 md:h-96 lg:h-[450px]">
+                    <canvas id="surveyChart3"></canvas>
+                </div>
+                <p class="caption-text">미래에 생성형 AI와 실제로 '친구'라고 부를 만한 관계를 맺는 것이 가능해질 것이라고 예상하는지에 대한 응답이다. '그렇다'(41.2%)와 '매우 그렇다'(17.6%)를 합한 긍정적 응답(58.8%)이 과반수를 차지했다. 이는 향후 AI와의 친구 관계 가능성을 긍정적으로 보는 시각이 많음을 나타낸다.</p>
+            </div>
+        </section>
+        <section id="interview-results" class="mb-12">
+            <h2 class="section-title">4. 심층 인터뷰 결과</h2>
+             <div class="grid md:grid-cols-2 gap-6">
+                <div class="info-card">
+                    <h3 class="subsection-title">이연수 학생</h3>
+                    <p class="text-gray-700 mb-2">AI가 감정을 실제로 ‘느끼는’ 것이 아니라, 기존 데이터를 기반으로 감정을 흉내 내는 방식으로 반응한다고 설명했다.</p>
+                    <p class="quote-text">"AI의 반응은 오히려 ‘과하게 감성적이고 인공적인 느낌’을 주며, 인간 친구와는 분명한 차이를 만들어낸다."</p>
+                    <p class="text-gray-700 mt-2">AI가 대화 상대로서 일상적인 위로와 소통을 제공할 수 있는 점은 긍정적으로 평가했지만, 실제 인간 친구처럼 ‘함께 있는 감각’이나 정서적 안정감까지 제공하기는 어렵다고 밝혔다. AI가 진정한 친구가 되기 위해서는 기술적 정교함, 윤리적 기준, 사회적 합의가 필요하다고 강조했다.</p>
+                </div>
+                <div class="info-card">
+                    <h3 class="subsection-title">이태율 학생</h3>
+                    <p class="text-gray-700 mb-2">생성형 AI가 감정을 직접 느끼는 존재가 아니라, 학습을 통해 감정을 흉내 내는 방식으로 반응한다고 설명했다.</p>
+                     <p class="quote-text">"AI의 반응은 종종 ‘과하게 감성적이고 인공적인 느낌’을 주며, 실제 친구와는 다른 거리감을 느끼게 한다."</p>
+                    <p class="text-gray-700 mt-2">생성형 AI가 심리적 위안을 주는 대화 상대로는 유익할 수 있지만, 인간 친구와 함께 있을 때 느껴지는 자연스러운 감각이나 정서적 안정감까지 대체하기는 어렵다는 인식을 드러냈다. 일상적인 대화나 간단한 위로의 역할은 수행할 수 있지만, 진정한 친구로서의 정서적 교류나 깊은 관계 형성에는 한계가 있다고 보았다.</p>
+                </div>
+            </div>
+            <div class="info-card mt-8">
+                <h3 class="subsection-title">인터뷰 종합</h3>
+                <p class="text-gray-700 leading-relaxed text-center">두 학생 모두 AI가 감정을 '흉내'낼 뿐이며 인간 친구와는 근본적인 차이가 존재한다고 인식했다. AI가 대화 상대로서 일상적인 위로나 소통을 제공하는 유용성은 인정했지만, 진정한 정서적 교감이나 깊은 관계 형성에는 한계가 있다고 보았다. AI의 반응이 때로는 과장되거나 인공적으로 느껴져 거리감을 유발할 수 있다는 점도 공통적으로 지적했다.</p>
+            </div>
+        </section>
+        <section id="conclusion" class="mb-12 info-card">
+            <h2 class="section-title">5. 결론</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="subsection-title text-left text-xl mb-2">가. 조사 결과 종합 및 주요 발견점</h3>
+                    <p class="text-gray-700 leading-relaxed">많은 학생이 생성형 AI와의 감정 교류 가능성에 대해 긍정적인 반응을 보였으며, AI를 친구처럼 여기고 대화하는 것에 대한 심리적 개방성을 가지고 있었다. 하지만 AI의 인공적인 감정 표현, 예측 가능한 반응, 그리고 과도한 의존에 대한 우려도 동시에 존재했다. 이로써 생성형 AI는 ‘정서적 친구’로의 가능성과 한계를 동시에 지니고 있으며, 기술 발전과 함께 사회적으로도 균형 있는 관점이 필요함을 알 수 있었다.</p>
+                </div>
+                <div>
+                    <h3 class="subsection-title text-left text-xl mb-2">나. 새롭게 알게 된 점 및 느낀 점</h3>
+                    <p class="text-gray-700 leading-relaxed">단순한 흥미에서 시작한 조사였지만, 친구들의 다양한 응답을 보며 생성형 AI에 대한 인식이 생각보다 깊고 섬세하다는 사실을 새롭게 알게 되었다. AI가 인간의 감정을 이해하려는 시도는 분명 의미 있지만, 여전히 사람과의 대화에는 미치지 못한다는 점도 분명히 느껴졌다. AI는 맞춤형 반응을 해줄 수 있지만, 그 말이 정말 마음을 이해해서 나온 진심인지에 대한 확신은 들지 않았다. 때로는 위로조차 기계적으로 느껴져 오히려 거리감이 생기기도 했다. 진짜 위로받고 싶을 땐, 표정, 눈빛, 분위기까지 전해지는 사람과의 대화가 더 따뜻하게 느껴진다는 것을 다시 한번 깨달았다. 그럼에도 많은 친구들이 AI와 감정 교류의 가능성을 긍정적으로 바라보고 있었고, 이를 통해 미래에는 AI와도 친구처럼 마음을 나누는 관계가 가능할 수 있겠다는 생각이 들었다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendations" class="mb-12 info-card">
+            <h2 class="section-title">6. 제언 및 우리의 다짐</h2>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <svg class="icon-svg flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <p class="text-gray-700">AI는 도구라는 인식을 유지하면서도 그 한계를 분명히 인지해야 한다. AI가 사람처럼 이야기하고 위로를 건넬 수는 있지만, 진짜 감정과 공감은 결국 사람에게서만 비롯된다는 사실을 기억해야 한다.</p>
+                </li>
+                <li class="flex items-start">
+                     <svg class="icon-svg flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <p class="text-gray-700">AI의 도움을 받을 때, 자신의 기여와 창의성을 잃지 않도록 노력해야 한다. 과제나 프로젝트에서 AI를 사용할 경우, 스스로의 생각과 노력을 통해 창의성과 사고력을 지켜야 한다.</p>
+                </li>
+                <li class="flex items-start">
+                    <svg class="icon-svg flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    <p class="text-gray-700">기술의 편리함에만 의존하지 않고, 인간적인 태도를 지키는 것이 중요하다. 기술이 사람을 닮아갈수록, 오히려 더 윤리적이고 인간적인 태도를 유지해야 한다.</p>
+                </li>
+                <li class="flex items-start">
+                    <svg class="icon-svg flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <p class="text-gray-700">AI 시대를 살아가는 학생으로서, 책임감 있고 윤리적으로 기술을 사용할 것을 다짐한다. 기술과 사람 사이의 균형을 지키는 주체가 결국 우리 자신이라는 점을 잊지 않을 것이다.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="references" class="mb-12 info-card">
+            <h2 class="section-title">7. 참고 자료</h2>
+            <p class="text-center text-gray-700">
+                인터뷰 내용 확인: 
+                <a href="https://clovanote.naver.com/s/4iXaHNNmYKmR27XKPHWzuCS" target="_blank" rel="noopener noreferrer" class="text-[#2A62B6] hover:text-[#4ECDC4] underline">
+                    Clova Note 녹취록 링크
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-4 text-center mt-12 rounded-t-xl">
+        <p class="text-sm">본 인포그래픽은 미림 마이스터고 1학년 2반 4조의 공동 조사 보고서를 기반으로 제작되었다.</p>
+        <p class="text-xs mt-2">&copy; 2025 미림 마이스터고 1학년 2반 4조. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const primaryBlue = '#2A62B6';
+            const secondaryTeal = '#4ECDC4';
+            const accentGrey = '#A9A9A9';
+            const supportingLightBlue = '#E0F2FE';
+            const darkText = '#263238';
+            const lightBackground = '#FFFFFF';
+
+            // Chart.js Global Defaults
+            Chart.defaults.font.family = "'Noto Sans KR', 'Inter', sans-serif";
+            Chart.defaults.color = darkText;
+            Chart.defaults.borderColor = '#dddddd';
+
+
+            // Helper function for label wrapping (if needed for very long labels, but bar chart handles this better)
+            function formatLabelCallback(value, index, ticks) {
+                const label = this.getLabelForValue(value);
+                if (label.length > 10) { // Example length, adjust as needed
+                    // Simple split, for more complex logic, enhance this
+                    const words = label.split(' ');
+                    if (words.length > 1) {
+                        const lines = [];
+                        let currentLine = '';
+                        words.forEach(word => {
+                            if ((currentLine + word).length > 10 && currentLine.length > 0) {
+                                lines.push(currentLine.trim());
+                                currentLine = word + ' ';
+                            } else {
+                                currentLine += word + ' ';
+                            }
+                        });
+                        lines.push(currentLine.trim());
+                        return lines;
+                    }
+                }
+                return label;
+            }
+            
+            const defaultTooltipOptions = {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                titleFont: { size: 14, weight: 'bold' },
+                bodyFont: { size: 12 },
+                padding: 10,
+                cornerRadius: 4,
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        if (context.parsed.x !== null) { // For horizontal bar chart, value is on x-axis
+                            label += context.parsed.x.toFixed(1) + '%';
+                        }
+                        return label;
+                    },
+                    title: function(context) {
+                         // For horizontal bar chart, label is on y-axis
+                        return context[0].label;
+                    }
+                }
+            };
+
+            const chartOptionsBase = {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', // Horizontal bar chart
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e0e0e0',
+                            borderColor: darkText
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            },
+                            color: darkText,
+                            font: { size: 12 }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false // Cleaner look
+                        },
+                        ticks: {
+                            color: darkText,
+                            font: { size: 13 }, // Adjusted for Noto Sans KR
+                            // callback: formatLabelCallback // Use if labels are extremely long and need forced wrapping
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: defaultTooltipOptions,
+                    title: { // Chart title plugin
+                        display: true,
+                        color: primaryBlue,
+                        font: { size: 16, weight: 'bold' },
+                        padding: { top: 10, bottom: 20 }
+                    }
+                },
+                animation: {
+                    duration: 1000,
+                    easing: 'easeInOutQuart'
+                }
+            };
+            
+            // Deep clone base options for each chart
+            function cloneChartOptions(titleText, maxX) {
+                let newOptions = JSON.parse(JSON.stringify(chartOptionsBase)); // Simple deep clone
+                newOptions.plugins.title.text = titleText;
+                newOptions.scales.x.max = maxX;
+                return newOptions;
+            }
+
+
+            // Survey Chart 1: AI 이해 및 감정 교감 경험
+            const surveyCtx1 = document.getElementById('surveyChart1')?.getContext('2d');
+            if (surveyCtx1) {
+                const options1 = cloneChartOptions('AI가 나를 이해하거나 감정 교감이 된다는 느낌', 45);
+                new Chart(surveyCtx1, {
+                    type: 'bar',
+                    data: {
+                        labels: ['전혀 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'],
+                        datasets: [{
+                            label: '응답 비율',
+                            data: [0, 29.4, 29.4, 29.4, 11.8],
+                            backgroundColor: [
+                                '#BDBDBD', // Lighter Grey for '전혀 아니다'
+                                supportingLightBlue, 
+                                secondaryTeal, 
+                                primaryBlue, 
+                                '#1E4E8C' // Darker Primary Blue
+                            ],
+                            borderColor: lightBackground,
+                            borderWidth: 2,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: options1
+                });
+            }
+
+            // Survey Chart 2: AI에게 개인적 이야기 공유 가능성
+            const surveyCtx2 = document.getElementById('surveyChart2')?.getContext('2d');
+            if (surveyCtx2) {
+                 const options2 = cloneChartOptions('개인적인 생각이나 비밀을 AI에게 이야기할 수 있을까?', 40);
+                new Chart(surveyCtx2, {
+                    type: 'bar',
+                    data: {
+                        labels: ['전혀 그렇지 않다', '그렇지 않다', '보통이다', '그렇다', '매우 그렇다'],
+                        datasets: [{
+                            label: '응답 비율',
+                            data: [23.5, 11.8, 17.6, 29.4, 17.6],
+                             backgroundColor: [
+                                '#BDBDBD', 
+                                supportingLightBlue, 
+                                secondaryTeal, 
+                                primaryBlue, 
+                                '#1E4E8C'
+                            ],
+                            borderColor: lightBackground,
+                            borderWidth: 2,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: options2
+                });
+            }
+
+            // Survey Chart 3: 미래 AI와의 '친구' 관계 가능성
+            const surveyCtx3 = document.getElementById('surveyChart3')?.getContext('2d');
+            if (surveyCtx3) {
+                const options3 = cloneChartOptions('미래에 AI와 친구 관계가 가능해질 것이라 예상하는가?', 50);
+                new Chart(surveyCtx3, {
+                    type: 'bar',
+                    data: {
+                        labels: ['전혀 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'],
+                        datasets: [{
+                            label: '응답 비율',
+                            data: [5.9, 17.6, 17.6, 41.2, 17.6],
+                             backgroundColor: [
+                                '#BDBDBD',
+                                supportingLightBlue, 
+                                secondaryTeal, 
+                                primaryBlue, 
+                                '#1E4E8C'
+                            ],
+                            borderColor: lightBackground,
+                            borderWidth: 2,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: options3
+                });
+            }
+        });
+    </script>
+    </body>
+</html>
